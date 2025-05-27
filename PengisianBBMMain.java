@@ -25,6 +25,9 @@ public class PengisianBBMMain {
                     String tipe = sc.nextLine();
                     System.out.print("Masukkan Merk  : ");
                     String merk = sc.nextLine();
+
+                    Antrian.tambahAntrian(new Kendaraan(platNomor, tipe, merk));
+                    System.out.println(">> Kendaraan masuk ke dalam antrian.");
             }
         } while (pilihan != 0 && pilihan <= 5);
     }
