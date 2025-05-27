@@ -5,7 +5,6 @@ public class PengisianBBMMain {
         AntrianKendaraan Antrian = new AntrianKendaraan();
 
         int pilihan;
-        pilihan = sc.nextInt();
         do {
             System.out.println("\n --- Menu SPBU ---");
             System.out.println("1. Tambah Antrian Kendaraan ");
@@ -26,6 +25,9 @@ public class PengisianBBMMain {
                     String tipe = sc.nextLine();
                     System.out.print("Masukkan Merk  : ");
                     String merk = sc.nextLine();
+
+                    Antrian.tambahAntrian(new Kendaraan(platNomor, tipe, merk));
+                    System.out.println(">> Kendaraan masuk ke dalam antrian.");
             }
         } while (pilihan != 0 && pilihan <= 5);
     }
