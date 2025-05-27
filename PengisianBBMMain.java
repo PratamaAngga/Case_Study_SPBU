@@ -3,10 +3,9 @@ public class PengisianBBMMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AntrianKendaraan Antrian = new AntrianKendaraan();
-        
-
 
         int pilihan;
+        pilihan = sc.nextInt();
         do {
             System.out.println("\n --- Menu SPBU ---");
             System.out.println("1. Tambah Antrian Kendaraan ");
@@ -28,9 +27,6 @@ public class PengisianBBMMain {
                     System.out.print("Masukkan Merk  : ");
                     String merk = sc.nextLine();
             }
-        }
-
-
+        } while (pilihan != 0 && pilihan <= 5);
     }
-    
 }
