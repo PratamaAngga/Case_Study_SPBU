@@ -1,7 +1,7 @@
 public class Queue {
     AntrianKendaraan Antrian = new AntrianKendaraan();
     Kendaraan[] data;
-    int size = Antrian.JumlahAntrian();
+    int size = 0;
     int front;
     int max;
     int ditangani;
@@ -10,7 +10,7 @@ public class Queue {
         this.max = max;
         this.data = new Kendaraan[max];
         this.front = 0;
-        size = size;
+        this.size = Antrian.JumlahAntrian();
     }
     public boolean isEmpty(){
         if (size == 0){
