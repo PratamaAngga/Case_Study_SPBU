@@ -18,6 +18,7 @@ public class AntrianKendaraan {
             System.out.println("Antrian kosong.");
             return;
         }
+        System.out.println();
         System.out.println("-- Antrian Kendaraan --");
         Node temp = head;
         while (temp != null) {
