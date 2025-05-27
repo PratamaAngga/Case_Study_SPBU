@@ -1,31 +1,40 @@
 public class QueueTransaksi {
     TransaksiPengisian[] data;
-    int front = 0;
-    int rear = 0;
+    int front;
+    int rear;
     int capacity;
+    int size;
 
     public QueueTransaksi(int kapasitas){
         this.capacity = kapasitas;
         data = new TransaksiPengisian[kapasitas];
+        front = 0;
+        rear = -1;
+        size = 0;
     }
 
     public void layaniKendaraan(TransaksiPengisian t) {
-        if (rear == capacity) {
+        if (size == capacity) {
             System.out.println("Queue Penuh!");
             return;
         }
-        data[rear++] = t;
+        rear = (rear + 1) % capacity;
+        data[rear] = t;
+        size++;
     }
 
     public void tampilRiwayat() {
-        if (rear == 0) {
+        int index = front;
+        if (size == 0) {
             System.out.println("Belum ada Transaksi!");
             return;
         }
         System.out.println("=== Riwayat ===");
-        for (int i = 0; i < rear; i++) {
-            data[i].tampilkanTransaksi();
+        for (int i = 0; i < size; i++) {
+            data[index].tampilkanTransaksi();
             System.out.println("---------------------");
+            index = (index + 1) % capacity;
+            
         }
     }
 }

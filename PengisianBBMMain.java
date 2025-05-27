@@ -39,8 +39,9 @@ public class PengisianBBMMain {
                     break;
                     
                 case 4:
-                     Kendaraan dilayani = Antrian.layaniKendaraan();
+                    Kendaraan dilayani = Antrian.layaniKendaraan();
                     if (dilayani != null) {
+                        System.out.println("Petugas melayani " + dilayani.platNomor);
                         System.out.print("Jenis BBM: ");
                         String namaBBM = sc.nextLine();
                         System.out.print("Harga per Liter: ");
@@ -53,7 +54,12 @@ public class PengisianBBMMain {
                         transaksiQueue.layaniKendaraan(transaksi);
                         System.out.println("Transaksi telah dicatat.");
                     }
+                    break;
+                case 5:
+                    transaksiQueue.tampilRiwayat();
+                    break;
             }
         } while (pilihan != 0 && pilihan <= 5);
+        sc.close();
     }
 }
