@@ -12,4 +12,8 @@ public class AntrianKendaraan {
         }
         size++;
     }
+
+    public int JumlahAntrian(){
+        return size;
+    }
 }
