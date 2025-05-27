@@ -28,7 +28,7 @@ public class AntrianKendaraan {
     public int JumlahAntrian(){
         return size;
     }
-    
+
     public void tampilkanAntrian() {
         if (head == null) {
             System.out.println("Antrian kosong.");
