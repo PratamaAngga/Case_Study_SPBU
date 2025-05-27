@@ -22,7 +22,7 @@ public class QueueTransaksi {
         data[rear] = t;
         size++;
     }
-    
+
     public void tampilRiwayat() {
         int index = front;
         if (size == 0) {
