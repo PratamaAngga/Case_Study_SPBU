@@ -28,6 +28,9 @@ public class PengisianBBMMain {
 
                     Antrian.tambahAntrian(new Kendaraan(platNomor, tipe, merk));
                     System.out.println(">> Kendaraan masuk ke dalam antrian.");
+                
+                case 3: 
+                    System.out.println("Jumlah kendaraan dalam antrian: " + Antrian.JumlahAntrian());
             }
         } while (pilihan != 0 && pilihan <= 5);
     }
