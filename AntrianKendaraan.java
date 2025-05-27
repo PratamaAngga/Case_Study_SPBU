@@ -13,10 +13,22 @@ public class AntrianKendaraan {
         size++;
     }
 
+    public Kendaraan layaniKendaraan() {
+        if (head == null) {
+            System.out.println("Antrian masih kosong, tidak dapat dihapus!");
+            return null;
+        } 
+        Kendaraan k = head.kendaraan;
+        head = head.next;
+        if (head == null) tail = null;
+        size--;
+        return k;
+    }
+
     public int JumlahAntrian(){
         return size;
     }
-    
+
     public void tampilkanAntrian() {
         if (head == null) {
             System.out.println("Antrian kosong.");
