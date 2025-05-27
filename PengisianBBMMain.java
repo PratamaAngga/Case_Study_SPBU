@@ -3,7 +3,7 @@ public class PengisianBBMMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AntrianKendaraan Antrian = new AntrianKendaraan();
-
+        
         int pilihan;
         do {
             System.out.println("\n --- Menu SPBU ---");
@@ -33,6 +33,9 @@ public class PengisianBBMMain {
                 case 2:
                     Antrian.tampilkanAntrian();
                     break;
+                
+                case 4:
+
             }
         } while (pilihan != 0 && pilihan <= 5);
     }
