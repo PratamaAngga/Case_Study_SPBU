@@ -5,7 +5,7 @@ public class PengisianBBMMain {
         AntrianKendaraan Antrian = new AntrianKendaraan();
 
         int pilihan;
-        pilihan = sc.nextInt();
+       
         do {
             System.out.println("\n --- Menu SPBU ---");
             System.out.println("1. Tambah Antrian Kendaraan ");
