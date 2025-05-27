@@ -3,7 +3,7 @@ public class PengisianBBMMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AntrianKendaraan Antrian = new AntrianKendaraan();
-
+        QueueTransaksi transaksiQueue = new QueueTransaksi(100);
         int pilihan;
         do {
             System.out.println("\n --- Menu SPBU ---");
@@ -28,9 +28,31 @@ public class PengisianBBMMain {
 
                     Antrian.tambahAntrian(new Kendaraan(platNomor, tipe, merk));
                     System.out.println(">> Kendaraan masuk ke dalam antrian.");
+                    break;
+
                 case 2:
                     Antrian.tampilkanAntrian();
                     break;
+                
+                case 3: 
+                    System.out.println("Jumlah kendaraan dalam antrian: " + Antrian.JumlahAntrian());
+                    break;
+                    
+                case 4:
+                     Kendaraan dilayani = Antrian.layaniKendaraan();
+                    if (dilayani != null) {
+                        System.out.print("Jenis BBM: ");
+                        String namaBBM = sc.nextLine();
+                        System.out.print("Harga per Liter: ");
+                        double harga = sc.nextDouble();
+                        System.out.print("Jumlah Liter: ");
+                        double liter = sc.nextDouble(); sc.nextLine();
+
+                        BBM bbm = new BBM(namaBBM, harga);
+                        TransaksiPengisian transaksi = new TransaksiPengisian(dilayani, bbm, liter);
+                        transaksiQueue.layaniKendaraan(transaksi);
+                        System.out.println("Transaksi telah dicatat.");
+                    }
             }
         } while (pilihan != 0 && pilihan <= 5);
     }
