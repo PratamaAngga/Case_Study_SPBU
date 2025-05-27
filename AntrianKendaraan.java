@@ -14,7 +14,7 @@ public class AntrianKendaraan {
     }
 
     public Kendaraan layaniKendaraan() {
-        if (head != null) {
+        if (head == null) {
             System.out.println("Antrian masih kosong, tidak dapat dihapus!");
             return null;
         } 

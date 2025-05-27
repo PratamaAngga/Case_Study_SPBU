@@ -53,7 +53,13 @@ public class PengisianBBMMain {
                         transaksiQueue.layaniKendaraan(transaksi);
                         System.out.println("Transaksi telah dicatat.");
                     }
+                    break;
+                
+                case 5:
+                    transaksiQueue.tampilRiwayat();
+                    break;
             }
         } while (pilihan != 0 && pilihan <= 5);
+        sc.close();
     }
 }
