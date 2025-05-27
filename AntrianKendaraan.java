@@ -12,4 +12,19 @@ public class AntrianKendaraan {
         }
         size++;
     }
+
+    public void tampilkanAntrian() {
+        if (head == null) {
+            System.out.println("Antrian kosong.");
+            return;
+        }
+        System.out.println();
+        System.out.println("-- Antrian Kendaraan --");
+        Node temp = head;
+        while (temp != null) {
+            temp.kendaraan.tampilanInformasi();
+            System.out.println("-----------");
+            temp = temp.next;
+        }
+    }
 }
