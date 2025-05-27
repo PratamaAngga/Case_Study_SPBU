@@ -3,6 +3,7 @@ public class PengisianBBMMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         AntrianKendaraan Antrian = new AntrianKendaraan();
+        Queue layani = new Queue(10); 
 
         int pilihan;
         do {
@@ -28,11 +29,21 @@ public class PengisianBBMMain {
 
                     Antrian.tambahAntrian(new Kendaraan(platNomor, tipe, merk));
                     System.out.println(">> Kendaraan masuk ke dalam antrian.");
-                    break;
-
                 case 2:
                     Antrian.tampilkanAntrian();
                     break;
+                case 3: 
+                    System.out.println("Jumlah kendaraan dalam antrian: " + Antrian.JumlahAntrian());
+                    break;
+                case 4:
+                    System.out.print("Petugas melayani: ");
+                    String melayani = sc.nextLine();
+                    System.out.print("Masukkan Jenis BBM: ");
+                    String jenis = sc.nextLine();
+                    System.out.print("Masukkan Jumlah liter: ");
+                    double jml = sc.nextDouble();
+                    
+
             }
         } while (pilihan != 0 && pilihan <= 5);
     }
